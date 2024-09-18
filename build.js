@@ -1,0 +1,1 @@
+require('fs').copyFileSync(process.execPath, 'excel-exporter.exe')

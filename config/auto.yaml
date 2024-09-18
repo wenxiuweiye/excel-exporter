@@ -1,0 +1,30 @@
+# 是否展示 Banner
+isShowBanner: true
+
+# 使用模式: "mixin", "defalut", 值默认为 default
+mode: "mixin" 
+
+# excel 配置 
+xlsxs: 
+  # - workbookUrl: "账单"
+  #   sheetName: "包装部"
+  #   colStart: 2
+  #   colEnd: 4
+  #   rowStart: 1
+  #   rowEnd: 4
+  #   cols: [1,2,3,4] 指定具体行，若与 colStart 和 colEnd 同时存在，程序会优先读取此配置、
+  #   rows: [2,3,4] 指定具体列，若与 rowStart 和 rowEnd 同时存在，程序会优先读取此配置
+
+  - workbookUrl: "账单"
+    sheetName: "包装部"
+    cols: [3,5,35,11,12,14,15] 
+    rows: [1,86,87,88]
+
+# 混合 配置
+mixins: 
+    # 作用在哪一个 excel 上，默认值为第一个, [2] => 指向的是 xlsxs[2] 也就是 第二个 excel
+  - excelIndex: [1]
+
+    # 此配置填写表达式，新增的col就是表达式的值，A 符号 B，每一行都会循环此表达式 
+    colHeader: "总价"
+    colExpression: "12+15"

@@ -1,0 +1,41 @@
+{
+  "name": "excel-exporter",
+  "version": "0.1.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "bin": {
+    "auto": "./dist/auto/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:repo": "jest --coverage",
+    "auto": "tsc && node ./dist/auto/index.js",
+    "start": "tsc && node ./dist/cli/index.js",
+    "rollup": "rollup -c rollup.config.js",
+    "build": "node --experimental-sea-config sea-config.json && node build.js && npx postject excel-exporter.exe NODE_SEA_BLOB sea-prep.blob ^ --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2"
+  },
+  "keywords": [
+    "excel",
+    "table"
+  ],
+  "author": "wenxiuweiye",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0",
+    "exceljs": "^4.4.0",
+    "figlet": "^1.7.0",
+    "mathjs": "^13.1.1",
+    "table": "^6.8.2",
+    "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.5.4",
+    "jest": "^29.7.0",
+    "rollup": "^4.21.2",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}

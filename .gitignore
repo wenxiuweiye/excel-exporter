@@ -1,0 +1,11 @@
+# bundle file and compiled file
+/dist
+
+# dev package
+/node_modules
+
+# testing report
+/coverage
+
+# personal excel
+/assets/**.xlsx
