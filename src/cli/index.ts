@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import figlet from "figlet"
 import { input } from "@inquirer/prompts";
 import { Workbook } from "exceljs";
@@ -44,7 +45,13 @@ async function main() {
 
     const wb = new Workbook()
 
-    const xlsx = await wb.xlsx.readFile(`${workbookUrl }`)
+    try {
+        wb.xlsx.readFile(`${workbookUrl}`)
+    } catch (e) {
+        throw new TypeError("There might be a problem with the workbook url")
+    }
+
+    const xlsx = await wb.xlsx.readFile(`${workbookUrl}`)
 
     const data: string[][] = []
 
