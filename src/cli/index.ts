@@ -3,11 +3,11 @@ import figlet from "figlet"
 import { input } from "@inquirer/prompts";
 import { Workbook } from "exceljs";
 import { table } from "table";
+import { createBanner } from "../util";
 
 async function main() {
 
-    console.log(figlet.textSync("Excel Exporter"))
-
+    console.log(createBanner())
 
     const workbookUrl = await input({
         message: "🍋 输入excel工作簿地址"

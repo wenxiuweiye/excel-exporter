@@ -5,6 +5,8 @@ import { input, select } from "@inquirer/prompts"
 import { resolve } from 'node:path';
 import { parse } from 'yaml'
 import { readFile } from 'node:fs/promises';
+import chalk from 'chalk'
+import { createBanner } from '../util';
 
 const llm = new Ollama({
     model: "qwen2.5",
@@ -13,8 +15,12 @@ const llm = new Ollama({
 const history = new InMemoryChatMessageHistory()
 
 async function main() {
+
+    console.log(createBanner());
+    
+
     const background = await select({
-        message: "选择你的 ai 预设",
+        message: chalk.hex("f75394").bgGreen.bold("选择你的 ai 预设"),
         choices: [
             {
                 name: "💐服装数据分析师",
@@ -46,7 +52,7 @@ async function main() {
         const question = await input({ message: "输入您的问题", })
 
         if (question === "exit") {
-            console.log("[excel-exporter]: 已退出")
+            console.log("----------",chalk.hex("f75394").bold("[excel-exporter]:"),"已退出 !!!!!!","----------")
             process.kill(process.pid)
         }
 
