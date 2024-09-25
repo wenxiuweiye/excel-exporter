@@ -1,5 +1,6 @@
 # bundle file and compiled file
 /dist
+*.exe
 
 # dev package
 /node_modules

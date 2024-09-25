@@ -3,26 +3,26 @@ import figlet from "figlet"
 import { input } from "@inquirer/prompts";
 import { Workbook } from "exceljs";
 import { table } from "table";
-import { createBanner } from "../util";
+import { createBanner, createQuestion } from "../util";
 
 async function main() {
 
     console.log(createBanner())
 
     const workbookUrl = await input({
-        message: "🍋 输入excel工作簿地址"
+        message: createQuestion("🍋 输入excel工作簿地址")
     })
 
     const sheetName = await input({
-        message: "🍉 输入sheet 名字"
+        message: createQuestion("🍉 输入sheet 名字")
     })
 
     const from = await input({
-        message: "🍍 输入开始的行数",
+        message: createQuestion("🍍 输入开始的行数"),
     })
 
     const to = await input({
-        message: "🍓 输入结束的行数"
+        message: createQuestion("🍓 输入结束的行数"),
     })
 
     const cols: number[] = []
@@ -31,7 +31,7 @@ async function main() {
 
     while (isGetCol) {
         const col = await input({
-            message: "输入 期望渲染的列, 若无直接回车"
+            message: createQuestion( "输入期望渲染的列, 若无直接回车")
         })
 
         if (!col) {

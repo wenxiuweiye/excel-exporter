@@ -1,2 +1,2 @@
 export * from "./addStartAndEnd"
-export * from "./createBanner"
+export * from "./style"

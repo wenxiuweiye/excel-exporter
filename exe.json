@@ -1,0 +1,4 @@
+{
+    "entry": "./dist/build/cli/index.js",
+    "out": "My Cool App.exe"
+}
