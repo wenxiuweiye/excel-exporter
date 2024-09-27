@@ -28,3 +28,4 @@ export type Mixin = {
 export type AutoFlow = (xlsxs: Xlsx[]) => void
 
 export type MixinAutoFLow = (xlsxs: Xlsx[], mixins: Mixin[]) => void
+
